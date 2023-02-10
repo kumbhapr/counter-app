@@ -33,3 +33,5 @@ jobs:
     - run: |
           git tag ${{github.run_id}}
           git push origin ${{github.run_id}}
+    - name: Deploy to S3
+        run: aws s3 cp $GITHUB_WORKSPACE/build s3://pdk-react-app/ --region ap-south-1 --recursive
