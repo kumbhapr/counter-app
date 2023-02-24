@@ -39,7 +39,7 @@ jobs:
     - run: aws s3 cp $GITHUB_WORKSPACE/build s3://pdk-react-app/ --region ap-south-1 --recursive
 
   stagingref-build:
-    if: ${{ github.event.inputs.message }} == 'stagingRef'
+    if: ${{ github.event.inputs.environment }} == 'stagingRef'
     runs-on: self-hosted
     strategy:
       matrix:
