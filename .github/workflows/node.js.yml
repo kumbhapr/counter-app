@@ -19,6 +19,7 @@ on:
 jobs:
   staging-build:
     runs-on: self-hosted
+    if: ${{ inputs.environment == 'Staging' }}
     strategy:
       matrix:
         node-version: [14.x]
